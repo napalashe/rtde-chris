@@ -28,21 +28,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 20
-        - nvm use 20
-        - npm ci
+        - npm install
     build:
       commands:
-        - npm run build
+        - echo "No build step needed for static site"
   artifacts:
-    baseDirectory: .next
+    baseDirectory: /
     files:
       - "**/*"
   cache:
     paths:
-      - .next/cache/**/*
-      - .npm/**/*
-      - node_modules/**/*xs
+      - node_modules/**/*
 
 applications:
   - frontend:
