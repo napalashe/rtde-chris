@@ -31,7 +31,7 @@ frontend:
         - npm install
     build:
       commands:
-        - echo "No build step needed for static site"
+        - echo "Static site - no build required"
   artifacts:
     baseDirectory: /
     files:
@@ -39,6 +39,15 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+  customHeaders:
+    - pattern: "**/*"
+      headers:
+        - key: "Cache-Control"
+          value: "max-age=0, no-cache, no-store, must-revalidate"
+        - key: "Pragma"
+          value: "no-cache"
+        - key: "Expires"
+          value: "0"
 
 applications:
   - frontend:

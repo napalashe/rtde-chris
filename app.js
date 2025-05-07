@@ -5,14 +5,17 @@ async function initApp() {
     const amplifyConfig = {
       Auth: {
         Cognito: {
-          userPoolId: process.env.USER_POOL_ID,
-          userPoolClientId: process.env.USER_POOL_CLIENT_ID,
+          userPoolId: "us-east-1_gajpEI5Ox",
+          userPoolClientId: "7sl2rmbk0m7hh96c6g1il3q9it",
+          identityPoolId: "us-east-1:20079a08-6076-4ed1-a947-0bd5bd108cc7",
         },
       },
       API: {
         GraphQL: {
-          endpoint: process.env.GRAPHQL_ENDPOINT,
-          region: process.env.REGION,
+          endpoint:
+            "https://et67qcynanbafjpd4rd5y7s4sm.appsync-api.us-east-1.amazonaws.com/graphql",
+          region: "us-east-1",
+          defaultAuthMode: "userPool",
         },
       },
     };

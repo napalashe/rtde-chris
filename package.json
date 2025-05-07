@@ -2,6 +2,7 @@
   "name": "rtde-chris",
   "version": "1.0.0",
   "description": "Real-time Document Editor",
+  "type": "module",
   "scripts": {
     "start": "serve ."
   },
@@ -9,5 +10,8 @@
     "aws-amplify": "^6.0.12",
     "@aws-amplify/ui": "^6.0.12",
     "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
