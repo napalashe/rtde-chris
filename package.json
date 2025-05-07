@@ -1,8 +1,9 @@
 {
   "name": "rtde-chris",
   "version": "1.0.0",
-  "description": "Real-time Document Editor",
+  "description": "Real-time Document Editor - Static Site",
   "type": "module",
+  "private": true,
   "scripts": {
     "start": "serve ."
   },
