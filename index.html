@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aws-amplify@6.0.12/dist/aws-amplify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@aws-amplify/ui@6.0.12/dist/aws-amplify-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@aws-amplify/ui@6.0.12/dist/aws-amplify-ui.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div id="auth-container"></div>
+      <div id="document-selector" class="container" style="display: none">
+        <div class="card">
+          <h1 class="editor-title">Select a Document</h1>
+          <div class="action-buttons">
+            <button id="refresh-button" class="refresh-button">Refresh</button>
+            <button id="create-new-button" class="create-new-button">
+              Create New Document
+            </button>
+            <button id="signout-button" class="signout-button">Sign Out</button>
+          </div>
+          <div id="documents-list" class="text-control"></div>
+        </div>
+      </div>
+      <div id="editor" class="container" style="display: none">
+        <div class="card">
+          <h2 class="editor-title">Real-time Collaborative Editor</h2>
+          <div class="formatting-controls">
+            <button id="bold-button" class="format-button">
+              <b>B</b>
+            </button>
+            <button id="italic-button" class="format-button">
+              <i>I</i>
+            </button>
+            <button id="underline-button" class="format-button">
+              <u>U</u>
+            </button>
+          </div>
+          <div class="text-control">
+            <textarea
+              id="editor-textarea"
+              class="text-area"
+              placeholder="Start typing..."
+            ></textarea>
+          </div>
+          <div class="action-buttons">
+            <button id="download-button" class="download-button">
+              Download
+            </button>
+            <button id="editor-signout-button" class="signout-button">
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="auth.js"></script>
+    <script src="documentSelector.js"></script>
+    <script src="editor.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -11,9 +11,9 @@ backend:
         - nvm install 20
         - nvm use 20
         - npm ci
-        
+
         - unset AWS_PROFILE
-        
+
         - export AWS_CONTAINER_CREDENTIALS_FULL_URI="http://169.254.170.2${AWS_CONTAINER_CREDENTIALS_RELATIVE_URI}"
         - export AWS_REGION=$CDK_DEFAULT_REGION
     build:
@@ -37,9 +37,27 @@ frontend:
   artifacts:
     baseDirectory: .next
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - .next/cache/**/*
       - .npm/**/*
       - node_modules/**/*xs
+
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: /
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
+    appRoot: .
