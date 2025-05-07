@@ -29,9 +29,11 @@ frontend:
     preBuild:
       commands:
         - npm install
+        - echo "// This is a static site, not a Next.js project" > next.config.js
     build:
       commands:
         - echo "Static site - no build required"
+        - rm -f next.config.js
   artifacts:
     baseDirectory: /
     files:
